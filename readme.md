@@ -730,7 +730,7 @@ val posTagger = new PerceptronApproach()
     .fit(trainPOS)
 {% endhighlight %}
 
-### ViveknSentimentDetector
+### ViveknSentimentDetector ([ViveknSentimentApproach](//src/main/scala/com/johnsnowlabs/nlp/annotators/sda/vivekn/ViveknSentimentApproach.scala) | [ViveknSentimentModel](//src/main/scala/com/johnsnowlabs/nlp/annotators/sda/vivekn/ViveknSentimentModel.scala))
 
 #### Sentiment analysis
 
@@ -762,7 +762,7 @@ val sentimentDetector = new ViveknSentimentApproach()
         .setCorpusPrune(false)
 {% endhighlight %}
 
-### SentimentDetector: Sentiment analysis
+### SentimentDetector: Sentiment analysis ([SentimentDetector](//src/main/scala/com/johnsnowlabs/nlp/annotators/sda/vivekn/SentimentDetector.scala) | [SentimentDetectorModel](//src/main/scala/com/johnsnowlabs/nlp/annotators/sda/vivekn/SentimentDetectorModel.scala))
 
 Scores a sentence for a sentiment  
 **Output type:** sentiment  

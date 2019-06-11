@@ -762,7 +762,7 @@ val sentimentDetector = new ViveknSentimentApproach()
         .setCorpusPrune(false)
 {% endhighlight %}
 
-### SentimentDetector: Sentiment analysis ([SentimentDetector](//src/main/scala/com/johnsnowlabs/nlp/annotators/sda/vivekn/SentimentDetector.scala) | [SentimentDetectorModel](//src/main/scala/com/johnsnowlabs/nlp/annotators/sda/vivekn/SentimentDetectorModel.scala))
+### SentimentDetector: Sentiment analysis ([SentimentDetector](//src/main/scala/com/johnsnowlabs/nlp/annotators/sda/pragmatic/SentimentDetector.scala) | [SentimentDetectorModel](//src/main/scala/com/johnsnowlabs/nlp/annotators/sda/pragmatic/SentimentDetectorModel.scala))
 
 Scores a sentence for a sentiment  
 **Output type:** sentiment  
@@ -1034,7 +1034,7 @@ val dependencyParser = new DependencyParserApproach()
     .setNumberOfIterations(10)
 {% endhighlight %}
 
-### Typed Dependency Parser
+### Typed Dependency Parser ([TypedDependencyParserApproach](//src/main/scala/com/johnsnowlabs/nlp/annotators/parser/typdep/TypedDependencyParserApproach.scala) | [TypedDependencyParserModel](//src/main/scala/com/johnsnowlabs/nlp/annotators/parser/typdep/TypedDependencyParserModel.scala))
 
 #### Labeled grammatical relation
 

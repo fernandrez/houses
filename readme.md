@@ -1,1 +1,1 @@
-[Link](//run.py)
+([LinkA](//run.py)|[LinkB](//Inmuebles.twbx))

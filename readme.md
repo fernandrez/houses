@@ -454,7 +454,7 @@ val normalizer = new Normalizer()
     .setOutputCol("normalized")
 {% endhighlight %}
 
-### Stemmer (Stemmer](//src/main/scala/com/johnsnowlabs/nlp/annotators/Stemmer.scala))
+### Stemmer ([Stemmer](//src/main/scala/com/johnsnowlabs/nlp/annotators/Stemmer.scala))
 
 Returns hard-stems out of words with the objective of retrieving the meaningful part of the word  
 **Output type:** Token  
@@ -642,7 +642,7 @@ val dateMatcher = new DateMatcher()
     .setOutputCol("date")
 {% endhighlight %}
 
-### SentenceDetector
+### SentenceDetector ([SentenceDetector](//src/main/scala/com/johnsnowlabs/nlp/annotators/sbd/pragmatic/SentenceDetector.scala))
 
 #### Sentence Boundary Detector
 
@@ -670,7 +670,7 @@ val sentenceDetector = new SentenceDetector()
     .setOutputCol("sentence")
 {% endhighlight %}
 
-### DeepSentenceDetector
+### DeepSentenceDetector ([DeepSentenceDetector](//src/main/scala/com/johnsnowlabs/nlp/annotators/sbd/deep/DeepSentenceDetector.scala))
 
 #### Sentence Boundary Detector with Machine Learning
 
@@ -886,7 +886,7 @@ val nerTagger = new NerCrfApproach()
     .fit(trainNer)
 {% endhighlight %}
 
-### NER DL ([NerDLApproach](//src/main/scala/com/johnsnowlabs/nlp/annotators/ner/dl/NerCrfApproach.scala) | [NerDLModel](//src/main/scala/com/johnsnowlabs/nlp/annotators/ner/dl/NerDLModel.scala))
+### NER DL ([NerDLApproach](//src/main/scala/com/johnsnowlabs/nlp/annotators/ner/dl/NerDLApproach.scala) | [NerDLModel](//src/main/scala/com/johnsnowlabs/nlp/annotators/ner/dl/NerDLModel.scala))
 
 #### Named Entity Recognition Deep Learning annotator
 

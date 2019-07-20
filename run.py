@@ -418,9 +418,11 @@ if __name__ == "__main__":
     
     to_geocode = no_lat
     if not history_df is None and history_df.shape[0]>0: 
-        history_df = history_df[geo_fields+["lat","lng"]] 
-        history_wc = history_df[~history_df["lat"].isnull()].drop_duplicates()
-        to_geocode = no_lat[~no_lat["link"].isin(history_wc["link"])]
+        history_df = history_df[geo_fields+["lat","lng"]].drop_duplicates()
+        to_geocode = no_lat[np.logical_and(~no_lat["link"].isin(history_df["link"]), ~no_lat["direccion"].isin(history_df["direccion"]))]
+        #history_wc = history_df[~history_df["lat"].isnull()].drop_duplicates()
+        #to_geocode = no_lat[~no_lat["link"].isin(history_wc["link"])]
+        
         
     print("Geocoding {} addresses".format(to_geocode.shape[0]))
     gmaps = googlemaps.Client(key="AIzaSyBvNIgPgByF8yH76rZtxVe5W1rThPIx5xs")
@@ -431,7 +433,6 @@ if __name__ == "__main__":
         if ret and len(ret)>0: 
             ret_val = list(ret[0]["geometry"]["location"].values())
         return ret_val
-    
     to_geocode.reset_index(inplace=True)
     d_geocode = dd.from_pandas(to_geocode, npartitions=30)
     
@@ -442,7 +443,7 @@ if __name__ == "__main__":
     print("Performing union")
     geo_codes = to_geocode
     if not history_df is None and history_df.shape[0]>0: 
-        geo_codes = pd.concat([history_wc, to_geocode], sort=True)
+        geo_codes = pd.concat([history_df, to_geocode], sort=True)
     #TODO: Adjust this line, to just join the null ones and concat with the ones already having latlng (zonaprop i.e.)
     keep_cols = [c for c in latest_data.columns.values if not c in ["lat","lng"]]
     latest_geocoded = pd.merge(latest_data[keep_cols], geo_codes[["link","lat","lng"]], on="link")

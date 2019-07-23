@@ -425,7 +425,7 @@ if __name__ == "__main__":
         
         
     print("Geocoding {} addresses".format(to_geocode.shape[0]))
-    gmaps = googlemaps.Client(key="AIzaSyBvNIgPgByF8yH76rZtxVe5W1rThPIx5xs")
+    gmaps = googlemaps.Client(key="hdp")
     
     def geocode_address(x):
         ret = gmaps.geocode(",".join([x["direccion"],x["barrio"],x["country"]]).replace("ZONA","Buenos Aires").replace("SUR","").replace("NORTE","").replace("OESTE",""))
